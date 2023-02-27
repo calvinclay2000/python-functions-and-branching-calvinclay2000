@@ -40,25 +40,27 @@ print (f'{test3 (f=sin,a=0,b=pi/2)} sin error 0.05')
 #Part D
 print('d')
 def trapezint3(f,a,b,n):
-    h=((b-a)/2)
+    h=((b-a)/n)
     s=0
     x=a
     for i in range(0,n):
-        s=(1/2)*h*(f(x)+f(x+1))+s
-        x=a+i*h
+        print('h,i,x,x+i(h),f(x),f(x+i*h)=',h,i,x,x+i*h,f(x),f(x+(i+1)*h))
+        s+=(1/2)*h*(f(x)+f(x+(i+1)*h))
+        print(s)
+        x=a+(i+1)*h
     return s
 
-def test4(f, a, b, n=10):
+def test4(f, a, b, n=100):
     return trapezint3(f,a,b,n)
-print(test4(f=cos, a=0, b=pi, n=10))
+print(test4(f=cos, a=0, b=pi, n=100))
 
 def test5(f,a,b,n=10):
     return trapezint3(f,a,b,n)
-print (test5 (f=sin,a=0,b=pi,n=10))
+print (test5 (f=sin,a=0,b=pi,n=100))
 
-def test6(f,a,b,n=10):
+def test6(f,a,b,n=100):
     return trapezint3(f,a,b,n)
-print (test6 (f=sin,a=0,b=pi/2,n=10))
+print (test6 (f=sin,a=0,b=pi/2,n=2))
 
 #Part E
 print ('e')
