@@ -42,11 +42,24 @@ print('d')
 def trapezint3(f,a,b,n):
     h=((b-a)/2)
     s=0
+    x=a
     for i in range(0,n):
-        s=f+s
+        s=(1/2)*h*(f(x)+f(x+1))+s
         x=a+i*h
-    return (1/2)*h*s
+    return s
 
 def test4(f, a, b, n=10):
     return trapezint3(f,a,b,n)
 print(test4(f=cos, a=0, b=pi, n=10))
+
+def test5(f,a,b,n=10):
+    return trapezint3(f,a,b,n)
+print (test5 (f=sin,a=0,b=pi,n=10))
+
+def test6(f,a,b,n=10):
+    return trapezint3(f,a,b,n)
+print (test6 (f=sin,a=0,b=pi/2,n=10))
+
+#Part E
+print ('e')
+
