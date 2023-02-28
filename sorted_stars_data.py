@@ -1,11 +1,3 @@
-def mysort(a,b):
-    if a[3] < b[3]:
-        return -1
-    elif a[3] > b[3]:
-        return 1
-    else:
-        return 0
-
 data = [
 ('Alpha Centauri A',    4.3,  0.26,      1.56),
 ('Alpha Centauri B',    4.3,  0.077,     0.45),
@@ -19,21 +11,33 @@ data = [
 ('Sirius B',            8.6,  0.001,     0.003),
 ('Ross 154',            9.4,  0.00002,   0.0005),
 ]
-table=[]
-for i in range(0, 11):
-    table.append ((data[i][0], data[i][1]))
- def mysort(a, b):
-     if a[3] < b[3]:
-         return -1
-     elif a[3] > b[3]:
-         return 1
-     else:
-         return 0
-for i range(0,11):
-    def mysort(data[i][1],data[i+1][1])
-        if a[3] < b[3]:
-            return -1
-        elif a[3] > b[3]:
-            return 1
-        else:
-            return 0
+
+
+
+distance_sorted_data = sorted(data, key=lambda star: star[1])
+brightness_sorted_data = sorted(data, key=lambda star: star[2])
+luminosity_sorted_data = sorted(data, key=lambda star: star[3])
+
+distance_list = []
+brightness_list = []
+luminosity_list = []
+
+
+for item in distance_sorted_data:
+    item_list = list(item)
+    distance_list.append([item_list[0],item_list[1]])
+
+for item in brightness_sorted_data:
+    item_list = list(item)
+    brightness_list.append([item_list[0],item_list[2]])
+
+for item in luminosity_sorted_data:
+    item_list = list(item)
+    luminosity_list.append([item_list[0],item_list[3]])
+
+
+
+
+print(distance_list)
+print(brightness_list)
+print(luminosity_list)
