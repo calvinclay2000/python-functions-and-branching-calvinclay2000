@@ -43,11 +43,12 @@ def trapezint3(f,a,b,n):
     h=((b-a)/n)
     s=0
     x=a
-    for i in range(0,n):
-        print('h,i,x,x+i(h),f(x),f(x+i*h)=',h,i,x,x+i*h,f(x),f(x+(i+1)*h))
-        s+=(1/2)*h*(f(x)+f(x+(i+1)*h))
-        print(s)
-        x=a+(i+1)*h
+    for i in range(n):
+        x = a + (i) * h
+        x_1 = a + (i+1) * h
+        s+=(1/2)*h*(f(x)+f(x_1))
+        #print(s)
+        #print('h,i,x,x+i(h),f(x),f(x+i*h)=', h, i, x, x + i * h, f(x), f(x + (i + 1) * h))
     return s
 
 def test4(f, a, b, n=100):
@@ -65,3 +66,6 @@ print (test6 (f=sin,a=0,b=pi/2,n=2))
 #Part E
 print ('e')
 
+def test_trapezint(f,a,b,n):
+    return trapezint3(f,a,b,n)
+print(f'(sqrt(2)*pi)/2+(sqrt(2)*pi)/2+pi/8=',{test_trapezint(sin,0,pi/2,2)})
