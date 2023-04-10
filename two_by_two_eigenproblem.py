@@ -29,8 +29,10 @@ print()
 matrix = twos_matrix + upper_negative_ones + lower_negative_ones
 print(f'M = {matrix}')
 print()
+
 eigenvalues, eigenvectors = np.linalg.eig(matrix)
 print(f'A = {eigenvalues}')
+
 print()
 print(f'x = {eigenvectors}')
 
